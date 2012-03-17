@@ -1,31 +1,10 @@
 <html>
-<link rel="icon" 
-      type="image/ico" 
-      href="assets/images/logo.ico">
-	<body>
-	<div id="menu-wrapper">
-		<div id="menu">
-			<ul>
-				<li class="current_page_item"><a href="#">Home</a></li>
-				<li><a href="#">Reviews</a></li>
-				<li><a href="#">Photos</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</div>
-		<!-- end #menu -->
-	</div>
-	<div id="header-wrapper">
-		<div id="header">
-			<div id="logo">
-				<h1><a href="/">Blevins Mobile </a></h1>
-			</div>
-		</div>
-	</div>
+	<%= render 'layouts/header' %>
 	<div id="wrapper">
 		<!-- end #header -->
 		<div id="page">
 		<div id='left_side'>
+			<%= render 'ads/google' %>
 			<%= render 'ads/google' %>
 			<%= render 'ads/google' %>
 		</div>

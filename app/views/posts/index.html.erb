@@ -1,0 +1,93 @@
+<html>
+<link rel="icon" 
+      type="image/ico" 
+      href="logo.ico">
+	<body>
+	<div id="menu-wrapper">
+		<div id="menu">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li class="current_page_item"><a href="/repairs">Reviews</a></li>
+				<li><a href="/repairs">Services</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</div>
+	<%= render 'layouts/header' %>
+	<div id="wrapper">
+		<!-- end #header -->
+		<div id="page">
+		<div id='left_side'>
+			<%= render 'ads/google' %>
+		</div>
+			<div id="page-bgtop">
+				<div id="page-bgbtm">
+					<div id="content">
+						<div class="post">
+							<div style="clear: both;">&nbsp;</div>
+							<div id="feed_list">
+								<% for post in @posts %>	
+									<li>
+										<% if post.first_name.present? %>
+											<b><%= post.first_name.capitalize %> 
+										<% end %>
+										<% if post.last_name.present? %>
+											<%= post.last_name.capitalize %></b> 
+										<% end %>
+										|<b>Make:</b> <%= post.make.capitalize %> |
+										|<b>Model:</b> <%= post.model.capitalize %> |
+										|<b>Year:</b> <%= post.year.strftime("%y") %> |<br />
+										<%= post.text %><br />
+										<%= time_ago_in_words(post.created_at) %>
+									</li>
+								<% end %>
+							</div>
+							<div id="new_feed_form">
+								<%= form_for Post.new do |f| %>	
+									<p>
+										<%= f.label :first_name %> (optional)<br />
+										<%= f.text_field :first_name %><br />
+										<%= f.label :last_name %> (optional)<br />
+										<%= f.text_field :last_name %><br />
+										<%= f.label :make %><br />
+										<%= f.text_field :make %><br />
+										<%= f.label :model %><br />
+										<%= f.text_field :model %><br />
+										<%= f.label :year %>
+										<%= f.date_select :year, :start_year => Time.now.year - 35, :end_year => Time.now.year, :order => [:year] %><br />
+
+										<%= f.label :text %><br />
+										<%= f.text_area :text %><br />
+	
+										<%= f.submit "Post" %>
+									</p>
+								<% end %>
+							</div>
+						</div>
+					</div>
+					<!-- end #content -->
+					<div id="sidebar">
+						<ul>
+							<li>
+								<h2>Contact Us</h2>
+								<ul>
+									<li><b>Todd Blevins</b><br>Owner/Operator</li>
+									<li>555 Hobart Ave<br>
+											Palm Bay, FL 32907</li>
+									<li><a href="mailto:tblevins004@cfl.rr.com" target="_blank">tblevins004@cfl.rr.com</a></li>
+									<li>(321) 914-8235</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<!-- end #sidebar -->
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+		<!-- end #page -->
+	</div>
+	<%= render 'ads/google_top' %>
+	<%= render 'layouts/footer' %>
+	<!-- end #footer -->
+	</body>
+</html>

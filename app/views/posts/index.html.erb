@@ -25,19 +25,19 @@
 						<div class="post">
 							<div style="clear: both;">&nbsp;</div>
 							<div id="feed_list">
-								<% for post in @posts %>	
+								<% for post in @posts %>
 									<li>
 										<% if post.first_name.present? %>
 											<b><%= post.first_name.capitalize %> 
 										<% end %>
 										<% if post.last_name.present? %>
 											<%= post.last_name.capitalize %></b> 
-										<% end %>
+										<% end %><br />
 										|<b>Make:</b> <%= post.make.capitalize %> |
 										|<b>Model:</b> <%= post.model.capitalize %> |
 										|<b>Year:</b> <%= post.year.strftime("%y") %> |<br />
-										<%= post.text %><br />
-										<%= time_ago_in_words(post.created_at) %>
+										<%= post.text %><br /><br />
+										<%= time_ago_in_words(post.created_at) %> ago
 									</li>
 								<% end %>
 							</div>

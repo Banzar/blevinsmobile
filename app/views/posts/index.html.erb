@@ -28,14 +28,14 @@
 								<% for post in @posts %>
 									<li>
 										<% if post.first_name.present? %>
-											<b><%= post.first_name.capitalize %> 
+											<b>Name:</b> <%= post.first_name.capitalize %>
 										<% end %>
 										<% if post.last_name.present? %>
-											<%= post.last_name.capitalize %></b> 
-										<% end %><br />
-										|<b>Make:</b> <%= post.make.capitalize %> |
-										|<b>Model:</b> <%= post.model.capitalize %> |
-										|<b>Year:</b> <%= post.year.strftime("%y") %> |<br />
+											<%= post.last_name.capitalize %>
+										<% end %>
+										| <b>Make:</b> <%= post.make.capitalize %> 
+										| <b>Model:</b> <%= post.model.capitalize %> 
+										| <b>Year:</b> <%= post.year.strftime("%y") %> <br /><br />
 										<%= post.text %><br /><br />
 										<%= time_ago_in_words(post.created_at) %> ago
 									</li>
@@ -53,7 +53,7 @@
 										<%= f.label :model %><br />
 										<%= f.text_field :model %><br />
 										<%= f.label :year %>
-										<%= f.date_select :year, :start_year => Time.now.year - 35, :end_year => Time.now.year, :order => [:year] %><br />
+										<%= f.date_select :year, :start_year => 1977, :end_year => Time.now.year, :order => [:year] %><br />
 
 										<%= f.label :text %><br />
 										<%= f.text_area :text %><br />

@@ -13,12 +13,10 @@
 			</ul>
 		</div>
 	<%= render 'layouts/header' %>
+	<%= render 'ads/google_top' %>
 	<div id="wrapper">
 		<!-- end #header -->
 		<div id="page">
-		<div id='left_side'>
-			<%= render 'ads/google' %>
-		</div>
 			<div id="page-bgtop">
 				<div id="page-bgbtm">
 					<div id="content">
@@ -26,14 +24,25 @@
 							<div style="clear: both;">&nbsp;</div>
 							<div class="entry">
 								<div align="center">
-									<img src="/assets/images/card.jpg">
+									<h5>Under construction, will be back up very soon!</h5>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- end #content -->
 					<div id="sidebar">
-						<%= render 'ads/google_right' %>
+						<ul>
+							<li>
+								<h2>Contact Us</h2>
+								<ul>
+									<li><b>Todd Blevins</b><br>Owner/Operator</li>
+									<li>555 Hobart Ave<br>
+											Palm Bay, FL 32907</li>
+									<li><a href="mailto:tblevins004@cfl.rr.com" target="_blank">tblevins004@cfl.rr.com</a></li>
+									<li>(321) 914-8235</li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 					<!-- end #sidebar -->
 					<div style="clear: both;">&nbsp;</div>
@@ -42,7 +51,6 @@
 		</div>
 		<!-- end #page -->
 	</div>
-	<%= render 'ads/google_top' %>
 	<%= render 'layouts/footer' %>
 	<!-- end #footer -->
 	</body>

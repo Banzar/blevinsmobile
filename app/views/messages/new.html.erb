@@ -13,7 +13,6 @@
 			</ul>
 		</div>
 	<%= render 'layouts/header' %>
-	<%= render 'ads/google_top' %>
 	<div id="wrapper">
 		<!-- end #header -->
 		<div id="page">
@@ -23,11 +22,14 @@
 						<div class="post">
 							<div style="clear: both;">&nbsp;</div>
 							<div class="entry">
-								<%= form_tag contact_path, :method => "get" do %>
-									Phone number:<br>
-									<%= text_field_tag :contact_number %><br>
-									<%= text_area_tag :message %><br>
-									<%= submit_tag "Send Message" %>
+								<%= form_for Message.new do |f| %>
+									<%= f.label :name %><br>
+									<%= f.text_field :name %><br>
+									<%= f.label :phone_number %><br>
+									<%= f.text_field :phone_number %><br>
+									<%= f.label :message %><br>
+									<%= f.text_area :message %><br>
+									<%= f.submit %>
 								<% end %>
 							</div>
 						</div>

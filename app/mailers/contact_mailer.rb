@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default :from => "slaitors@gmail.com"
+  default :from => "todd@blevinsmobile.com"
 
 	def contact_info(message)
 		@message = message
